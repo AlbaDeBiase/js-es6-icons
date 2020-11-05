@@ -75,18 +75,10 @@ const icons = [
 ]
 
 
-// milestone 2:
-// definire un array di colori e associare ad ogni
-// tipo di icona un colore.
-// Visualizzare le icone di colore diverso in base al
-// tipo.
-// const {type} = icons;
-// console.log(type)
 
-//     const colors= ["blue", "red", "orange"];
 // Scorro tutte le icone per trovare l'elemento corrente
-icons.forEach((icona_corrente) => {
-    // console.log(icon)
+icons.forEach((icona_corrente, index) => {
+    console.log(icona_corrente,)
     // destrutturo l'elemento corrente (icona_corrente) per ricavarmi le caratteristiche che mi servono
     const {name, prefix, family} = icona_corrente;
 
@@ -99,18 +91,21 @@ icons.forEach((icona_corrente) => {
 
 });
 
-// Definisco una variabile colors che mi servirà per suddividere le icone per tipo
+// Definisco una variabile colors che mi servirà per inglobare le icone suddivise per tipo
     const colors= ["blue", "red", "orange"];
+    const icon_types = [];
+    console.log(icon_types)
 
-icons.forEach((icona_corrente) => {
-console.log(`${icona_corrente.type}
+// Scorro le icone e individuo solo il valore tipo
+icons.forEach((icona_corrente,) => {
+    console.log(`${icona_corrente.type}
     `);
+// Creo la variabile tipo
+    const {type} = icona_corrente;
+    console.log(icona_corrente);
+// scorro le icone una alla volta, se il tipo non è inserito nell'array lo inserisco, se no vado avanti
+    if(!icon_types.includes(type)) {
 
+           icon_types.push(type);
+       }
 });
-
-
-// milestone 2:
-// definire un array di colori e associare ad ogni
-// tipo di icona un colore.
-// Visualizzare le icone di colore diverso in base al
-// tipo.
