@@ -1,0 +1,37 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#icons-container {
+  margin: 30px;
+  padding: 20px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+}
+
+#icons-container::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+i {
+  /* float: left; */
+  width: 300px;
+  height: 200px;
+  font-size: 35px;
+  padding:20px;
+  text-align: center;
+
+
+}
+
+/* .filter {
+  text-align: center;
+  margin: 20px;
+} */
