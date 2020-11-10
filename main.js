@@ -149,3 +149,37 @@ function print_icon(icon_object) {
             <p>${name}</p>
     `);
 }
+
+
+// Scorro le icone per filtrarle in base al tipo call'interno della select
+
+icon_types.forEach((type) => {
+    $('#icons-filter').append(`
+        <option value="${type}">${type}</option>
+    `);
+});
+// intercetto l'icona selezionata
+$('#icons-filter').change(() => {
+    // recupero il tipo selezionato dall'utente
+    const selected_type = $('#icons-filter').val();
+    console.log(selected_type);
+
+    // svuoto la pagina
+    $('#icons-container').empty();
+
+    // verifico la sceòlta dell'utente
+    if(selected_type != '') {
+        // recupero le icone corrispondeti al tipo scelto dall'utente
+        const chosen_icons = icons.filter((icon) => {
+            return selected_type == icon.type;
+        });
+        // stampo le icone corrispondenti in base alla scelta dall'utente
+        chosen_icons.forEach((icon) => {
+            print_icon(icon);
+        });
+    } else {
+        // se l'utente clicca su all types, allora le visualizzo tutte
+        print_all_icons(icons);
+    }
+
+});
